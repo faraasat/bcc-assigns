@@ -49,14 +49,17 @@
   border-radius: 4px;
   border: none;
   outline: none;
-  background-color: rgb(251, 191, 78);
   color: #fff;
   font-size: 14px;
-  letter-spacing: 6;
+  letter-spacing: 1.2px;
 }
 
 .app-main__button-blue {
   background-color: lightblue !important;
+}
+
+.app-main__button-orange {
+  background-color: rgb(251, 191, 78);
 }
 
 .app-main__align {
@@ -74,4 +77,38 @@
   justify-content: center;
   margin: 20px 0;
   padding: 20px 10px;
+}
+
+.app-main__btns {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.app-main__add-btn {
+  display: flex;
+  align-items: center !important;
+  background-color: rgb(145, 255, 145);
+  transition: all 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+.app-main__add-btn:hover {
+  background-color: rgb(109, 255, 109);
+}
+
+.app-main__del-btn {
+  display: flex;
+  align-items: center !important;
+  background-color: rgb(255, 141, 141);
+  transition: all 0.3s ease-in-out;
+}
+
+.app-main__del-btn:hover {
+  background-color: rgb(255, 116, 116);
+}
+
+.app-main__add-btn svg, .app-main__del-btn svg {
+  width: 16px;
+  height: 16px;
 }

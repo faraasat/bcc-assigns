@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { FilePlus, Trash2 } from "react-feather";
+
 import ActiveTodoComponent from "./components/active-todos";
 import InactiveTodoComponent from "./components/inactive-todos";
 
@@ -17,12 +19,26 @@ function App() {
       </nav>
       <main className="app-main">
         <div className="app-main__align">
-          <button
-            className={`${!active && "app-main__button-blue"}`}
-            onClick={() => setActive(!active)}
-          >
-            {active ? "Show Inactive Todos" : "Show Active Todos"}
-          </button>
+          <div className="app-main__btns">
+            <div>
+              <button
+                className={`${
+                  !active ? "app-main__button-blue" : "app-main__button-orange"
+                }`}
+                onClick={() => setActive(!active)}
+              >
+                {active ? "Show Inactive Todos" : "Show Active Todos"}
+              </button>
+            </div>
+            <div>
+              <button className="app-main__add-btn">
+                <FilePlus /> <span>Add Todo</span>
+              </button>
+              <button className="app-main__del-btn">
+                <Trash2 /> <span>Delete All</span>
+              </button>
+            </div>
+          </div>
           <div className="app-main__todos">
             {active ? <ActiveTodoComponent /> : <InactiveTodoComponent />}
           </div>
