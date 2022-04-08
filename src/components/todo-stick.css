@@ -21,6 +21,10 @@
   max-width: 80%;
 }
 
+.todo-icons svg {
+  cursor: pointer;
+}
+
 .todo-icons__bell {
   color: rgb(251, 251, 110);
   margin-right: 10px;

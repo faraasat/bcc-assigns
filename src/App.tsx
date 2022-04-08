@@ -1,14 +1,18 @@
+import { useDispatch } from "react-redux";
 import { useState } from "react";
-
 import { FilePlus, Trash2 } from "react-feather";
 
 import ActiveTodoComponent from "./components/active-todos";
 import InactiveTodoComponent from "./components/inactive-todos";
+import InputComponent from "./components/input";
+import { addTodo, deleteAll } from "./store/actions";
 
 import "./App.css";
 
 function App() {
   const [active, setActive] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div className="app">
@@ -31,10 +35,16 @@ function App() {
               </button>
             </div>
             <div>
-              <button className="app-main__add-btn">
+              <button
+                className="app-main__add-btn"
+                onClick={() => setIsEdit(!isEdit)}
+              >
                 <FilePlus /> <span>Add Todo</span>
               </button>
-              <button className="app-main__del-btn">
+              <button
+                className="app-main__del-btn"
+                onClick={() => dispatch(deleteAll())}
+              >
                 <Trash2 /> <span>Delete All</span>
               </button>
             </div>
@@ -49,6 +59,10 @@ function App() {
           <p>Copyright &copy; 2021 by Todo App. All Rights Reserved.</p>
         </div>
       </footer>
+      {isEdit && <div className="overlay"></div>}
+      {isEdit && (
+        <InputComponent setIsEdit={setIsEdit} setTodo={addTodo} id={null} />
+      )}
     </div>
   );
 }

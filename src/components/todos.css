@@ -1,0 +1,10 @@
+.no-todos {
+  display: flex;
+  align-items: center;
+  color: lightskyblue;
+}
+
+.no-todos span {
+  margin-left: 10px;
+  font-size: 19px;
+}
