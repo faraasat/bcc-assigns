@@ -1,0 +1,43 @@
+.todo {
+  min-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  margin-bottom: 10px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(1, 1, 1, 0.1);
+}
+
+.todo-inactive {
+  background-color: rgb(251, 191, 78) !important;
+}
+
+.todo-title {
+  font-size: 18px;
+  font-family: cursive;
+  color: #fff;
+  max-width: 80%;
+}
+
+.todo-icons svg {
+  cursor: pointer;
+}
+
+.todo-icons__bell {
+  color: rgb(251, 251, 110);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-icons__edit {
+  color: rgb(75, 223, 75);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-icons__del {
+  color: rgb(226, 146, 146);
+  cursor: pointer;
+}
